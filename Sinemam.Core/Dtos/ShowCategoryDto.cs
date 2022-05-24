@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sinemam.Core.UnitOfWork
+namespace Sinemam.Core.Dtos
 {
-    public interface IGenericUnitOfWork:IAsyncDisposable
+    public class ShowCategoryDto:ShowDto
     {
-        Task CommitAsync();
-       
+        public CategoryDto Category { get; set; }
     }
 }

@@ -17,12 +17,12 @@ namespace Sinemam.Repository.Repository
         public GenericRepository(AppDbContexts.AppContext context)
         {
             _context = context;
-            _dbSet=context.Set<T>();
+            _dbSet = context.Set<T>();
         }
 
         public async Task AddAsync(T entity)
         {
-             await _dbSet.AddAsync(entity);
+            await _dbSet.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
@@ -35,7 +35,7 @@ namespace Sinemam.Repository.Repository
             return await _dbSet.AnyAsync(expression);
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             return _dbSet.AsNoTracking().AsQueryable();
         }

@@ -8,10 +8,10 @@ namespace Sinemam.Core.Entities
 {
     public abstract class EntityBase
     {
-        public int Id { get; set; }       
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
-        public bool IsActive { get; set; }
-        public bool IsDelete { get; set; }
+        public virtual int Id { get; set; }       
+        public virtual DateTime CreatedDate { get; set; }=DateTime.Now;
+        public virtual DateTime UpdatedDate { get; set; } = DateTime.Now;
+        public virtual bool IsActive { get; set; } = true;
+        public virtual bool IsDelete { get; set; }=false;
     }
 }

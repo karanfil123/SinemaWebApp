@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sinemam.Core.UnitOfWork
+namespace Sinemam.Core.Dtos
 {
-    public interface IGenericUnitOfWork:IAsyncDisposable
+    public class NoContentDto
     {
-        Task CommitAsync();
-       
     }
 }

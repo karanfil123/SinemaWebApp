@@ -9,21 +9,21 @@ namespace Sinemam.Repository.Unitofworks
 {
     public class Unitofwork : IGenericUnitOfWork
     {
-        private readonly AppDbContexts.AppContext context;
+        private readonly AppDbContexts.AppContext _context;
 
         public Unitofwork(AppDbContexts.AppContext context)
         {
-            this.context = context;
-        }
-
-        public void Commit()
-        {
-           context.SaveChanges();
-        }
+            _context = context;
+        }      
 
         public async Task CommitAsync()
         {
-          await  context.SaveChangesAsync();
+          await  _context.SaveChangesAsync();
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }
